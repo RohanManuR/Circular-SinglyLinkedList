@@ -111,5 +111,25 @@ public class CircularSinglyLinkedList<E extends Comparable> {
         return true;
     }
 
+    // method to search element in circular list
+    public boolean search(E data)
+    {
+        // checking atleast one element is present or not
+        if(head==null) {
+            System.out.println("list is empty");
+            return false;
+        }
+        // temp node pointing to head
+        Node temp = head;
+        // traversing over the circular list
+        for (int i = 0; i < size(); i++) {
+            // checking the data is present or not in list
+            if (temp.data.equals(data))
+                return true;
+            temp = temp.next;
+        }
+        return false;
+    }
+
 
 }

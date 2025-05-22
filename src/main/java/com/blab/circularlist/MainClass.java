@@ -17,6 +17,8 @@ public class MainClass {
         list.add(4,35);
         // displaying the circular list elements
         System.out.println(list);
+        // searching element in list
+        System.out.println(list.search(5));
 
     }
 }
