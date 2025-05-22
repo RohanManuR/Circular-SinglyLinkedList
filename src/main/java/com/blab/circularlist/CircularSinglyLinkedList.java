@@ -56,6 +56,60 @@ public class CircularSinglyLinkedList<E extends Comparable> {
         return "";
     }
 
+    // method to display size of list
+    public int size()
+    {
+        // temp node pointing to head
+        Node temp = head;
+        // variable to store size
+        int size = 0;
+        // checking head is empty or not
+        if(head == null)
+            return 0;
+        // traversing the temp till last to stop iteration
+        do {
+            size++;
+            temp = temp.next;
+        }while(temp!=head);
+        return size;
+    }
+
+    // method to add element to circular list based on index
+    public boolean add(int index,E data)
+    {
+        // checking index is within the limit or not
+        if(index>size()){
+            System.out.println("Index is out of limit");
+            return false;
+        }
+        // node object created
+        Node node = new Node(data);
+        // temp node pointing to head
+        Node temp = head;
+        // previous node to point back element
+        Node previous = null;
+        // traversing over the circular list
+        for (int i=1;i<=size();i++)
+        {
+            // checking the index and position
+            if(i==index) {
+                node.next = temp.next;
+                temp.next = node;
+                return true;
+            }
+            previous = temp;
+            temp = temp.next;
+
+        }
+        // checking that to add first position
+        if(index==0){
+            previous.next = node;
+            node.next = head;
+            head = node;
+        }
+
+        return true;
+    }
 
 
 }
