@@ -21,6 +21,8 @@ public class MainClass {
         System.out.println(list.search(5));
         // remove element based on data
         list.delete(300);
+        // updating the data based on index
+        list.set(4,15);
         // display the updated list
         System.out.println(list);
 

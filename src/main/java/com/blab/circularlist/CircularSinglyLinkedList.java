@@ -159,4 +159,29 @@ public class CircularSinglyLinkedList<E extends Comparable> {
         return false;
     }
 
+    // method to modify the data in list based on index
+    public boolean set(int index,E newData)
+    {
+        // checking the index is within the limit or not
+        if(index>=size()){
+            System.out.println("index is out of limit.");
+            return false;
+        }
+        // checking the modifying data is first element or not
+        if(index==0)
+            head.data = newData;
+
+        // temp node pointing to 2nd node
+        Node temp = head.next;
+        // traversing over the circular list
+        for(int i=1;i<size();i++)
+        {
+            if(index==i){
+                temp.data = newData;
+            }
+            temp = temp.next;
+        }
+        return true;
+    }
+
 }
