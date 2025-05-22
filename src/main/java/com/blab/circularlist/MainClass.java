@@ -23,6 +23,8 @@ public class MainClass {
         list.delete(300);
         // updating the data based on index
         list.set(4,15);
+        // sorting the circular list
+        list.sort();
         // display the updated list
         System.out.println(list);
 

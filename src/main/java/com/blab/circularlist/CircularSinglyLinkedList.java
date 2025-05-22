@@ -184,4 +184,28 @@ public class CircularSinglyLinkedList<E extends Comparable> {
         return true;
     }
 
+    // sorting the element in circular list
+    public void sort()
+    {
+        // checking that atleast 2 elements present or not to sort
+        if (head==null || head==head.next){
+            System.out.println("list is too small");
+            return;
+        }
+        // outer loop to traversing over the circular list
+        for (int i = 0; i < size(); i++) {
+            Node temp = head;
+            // traversing over the circular list and swapping based on condition
+            for (int j = i; j < size(); j++) {
+
+                if(temp.data.compareTo(temp.next.data)>0){
+                    Comparable swap = temp.data;
+                    temp.data = temp.next.data;
+                    temp.next.data = swap;
+                }
+                temp = temp.next;
+            }
+        }
+    }
+
 }
