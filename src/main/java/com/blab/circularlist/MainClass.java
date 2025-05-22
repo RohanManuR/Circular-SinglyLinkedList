@@ -19,6 +19,10 @@ public class MainClass {
         System.out.println(list);
         // searching element in list
         System.out.println(list.search(5));
+        // remove element based on data
+        list.delete(300);
+        // display the updated list
+        System.out.println(list);
 
     }
 }

@@ -131,5 +131,32 @@ public class CircularSinglyLinkedList<E extends Comparable> {
         return false;
     }
 
+    // method to delete the data in list
+    public boolean delete(E data){
+        // checking atleast one element is present or not
+        if(head==null) {
+            System.out.println("list is empty");
+            return false;
+        }
+
+        // temp node pointing to head
+        Node temp = head;
+        // traversing over the circular list
+        for (int i=1;i<size();i++){
+            // checking the data and removing
+            if(temp.next.data.equals(data)){
+                temp.next = temp.next.next;
+                return true;
+            }
+            temp = temp.next;
+        }
+        // checking that to remove first element
+        if(head.data.equals(data)){
+            temp.next = temp.next.next;
+            head = temp.next;
+            return true;
+        }
+        return false;
+    }
 
 }
